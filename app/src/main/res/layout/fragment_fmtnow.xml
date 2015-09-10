@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/fmtLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Waste_text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:text="Minutes to fill"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/minutesField"
+        android:layout_below="@+id/Waste_text"
+        android:layout_alignLeft="@+id/Waste_text"
+        android:layout_alignStart="@+id/Waste_text"
+        android:layout_marginTop="46dp"
+        android:layout_alignRight="@+id/Waste_text"
+        android:layout_alignEnd="@+id/Waste_text"
+        android:gravity="center" />
+
+    <Button
+        android:imeOptions="actionDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill My Time"
+        android:id="@+id/buttonFMT"
+        android:layout_below="@+id/minutesField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp" />
+</RelativeLayout>
