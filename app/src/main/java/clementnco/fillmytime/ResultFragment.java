@@ -100,14 +100,16 @@ public class ResultFragment extends Fragment {
             @Override
             public void onSuccess(int statusCode, org.apache.http.Header[] headers, JSONArray response) {
                 for (int i = 0; i < response.length(); ++i) {
-                    if (response.optJSONObject(i) != null && response.optJSONObject(i).optInt("DURATION") <= time && response.optJSONObject(i).optInt("DURATION") >= time + 20)
+                    if (response.optJSONObject(i) != null && (response.optJSONObject(i).optInt("DURATION") >= time - 10 && response.optJSONObject(i).optInt("DURATION") <= time + 10))
                         list.add(response.optJSONObject(i));
                 }
-                Random rand = new Random();
-                int n = rand.nextInt(list.size());
                 try {
+                    Random rand = new Random();
+                    int n = rand.nextInt(list.size());
                     finalResult.setText(list.get(n).getString("ACTIVITY"));
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                    finalResult.setText("We can't find you something to do right now, try again later");
+                }
             }
 
             @Override

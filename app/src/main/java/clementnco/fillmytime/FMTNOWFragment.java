@@ -24,12 +24,7 @@ public class FMTNOWFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(editText.getText().toString());
-
                 if (editText.getText().length() != 0) {
-
-
-
                     int nbr = Integer.parseInt(editText.getText().toString());
                     FragmentManager fm = getFragmentManager();
                     ResultFragment rf = new ResultFragment();
@@ -37,7 +32,6 @@ public class FMTNOWFragment extends Fragment {
                     args.putInt("time", nbr);
                     rf.setArguments(args);
                     fm.beginTransaction().replace(R.id.container, rf).commit();
-
                 }
             }
         });
